@@ -29,22 +29,15 @@ const uniJourneyProject = [
   }
 ];
 
-export const FeaturedProjects = () => (
-  <section className="max-w-7xl mx-auto px-4 py-16 sm:py-24">
-    <div className="space-y-20 sm:space-y-28">
-      <div className="flex justify-center">
-        {featuredProjects.map((project) => (
-          <ProjectCard key={project.title} {...project} />
-        ))}
-      </div>
-      {uniJourneyProject.map((project) => (
-        <UniJourneyCard key={project.title} {...project} />
-      ))}
-    </div>
-  </section>
-);
-
-export const ProjectCard = ({ title, description, imageUrl, logoUrl, link }) => (
+interface ProjectCard {
+  title : string;
+  description : string;
+  imageUrl : string;
+  logoUrl? : string;
+  link : string;
+}
+  
+export const ProjectCard = ({ title, description, imageUrl, logoUrl, link }: ProjectCard) => (
   <Link href={link} className="block group max-w-6xl">
     <article className="mx-auto">
       <div className="rounded-lg overflow-hidden mb-8 shadow-sm group-hover:scale-[1.035] transition-transform duration-300 ease-in-out">
@@ -63,6 +56,21 @@ export const ProjectCard = ({ title, description, imageUrl, logoUrl, link }) => 
       <p className="text-sm sm:text-base text-gray-600">{description}</p>
     </article>
   </Link>
+);
+
+export const FeaturedProjects = () => (
+  <section className="max-w-7xl mx-auto px-4 py-16 sm:py-24">
+    <div className="space-y-20 sm:space-y-28">
+      <div className="flex justify-center">
+        {featuredProjects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
+      </div>
+      {uniJourneyProject.map((project) => (
+        <UniJourneyCard key={project.title} {...project} />
+      ))}
+    </div>
+  </section>
 );
 
 export const UniJourneyCard = ({ title, description, imageUrl, link }) => (

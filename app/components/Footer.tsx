@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { Mail, Linkedin, Github } from 'lucide-react'; // Example icons
+import { Mail, Linkedin, Github } from 'lucide-react';
 
 const Footer = () => {
   // We define the marquee content once and duplicate it in the JSX.

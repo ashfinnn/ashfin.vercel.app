@@ -55,8 +55,7 @@ export const SmallProjectCard = ({ title, imageUrl, link }) => (
           alt={`${title} project preview`}
           width={500}
           height={400}
-          layout="responsive"
-          className="object-cover"
+          className="object-cover w-full h-auto"
         />
       </div>
       <h3 className="text-sm sm:text-base md:text-lg font-medium text-gray-700">{title}</h3>
